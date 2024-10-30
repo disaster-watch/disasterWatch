@@ -1,0 +1,70 @@
+/* TABLET SCREENS */
+/* screen 884 */
+@media screen and (max-width: 884px) {
+  /* Modal */
+  .modal {
+    width: 80%;
+    left: 10%;
+    top: 40px;
+  }
+  .modal-backdrop {
+    height: 60.4vh;
+  }
+}
+
+/* screen 834 */
+@media screen and (max-width: 834px) {
+  /* Modal */
+  .modal {
+    top: 45px;
+  }
+  .modal-backdrop {
+    height: 61.2vh;
+  }
+}
+/* screen 768 */
+@media screen and (max-width: 768px) {
+  /* Modal */
+  .modal {
+    top: 35px;
+  }
+  .modal-backdrop {
+    height: 59.5vh;
+  }
+}
+
+/* MOBILE SCREENS */
+/* Screen size 430px */
+@media screen and (max-width: 430px) {
+  /* Alert responsiveness */
+
+  /* Hamburger-menu */
+  .alert .menu span {
+    width: 27px;
+    /* height: 3px; */
+  }
+  .alert .div2 {
+    gap: 0px;
+  }
+  .alert small {
+    font-size: 17px;
+  }
+  .alert h3 {
+    font-size: 17px;
+  }
+
+  .alert img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  /* Modal */
+  .modal {
+    top: 22px;
+    /* border: 2px solid var(--color-background); */
+  }
+  .modal-backdrop {
+    display: none;
+  }
+}

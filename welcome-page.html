@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=0, initial-scale=1.0" />
+    <title>Welcome Section</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+
+  <body>
+    <div class="div-body">
+      <div class="text-light md:w-[70%] m-auto">
+        <h1
+          class="cssanimation fadeInLeft text-[20px] text-start md:text-[30px] m-auto font-bold mb-2"
+        >
+          ALWAYS BE IN THE KNOW ABOUT NATURAL DISASTERS IN YOUR COUNTRY AND
+          AROUND THE WORLD.
+        </h1>
+        <p class="card-text cssanimation text-start fadeInLeft text-[12px]">
+          Always get notified when you are around high risk location
+        </p>
+
+        <div class="borders mt-[5rem] md:mb-12">
+          <!-- Image container with centered icon and additional circles -->
+          <div class="image-container">
+            <div class="svg">
+              <img src="img/map-wlecoming.png" alt="Map Image" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="64"
+                height="64"
+                fill="currentColor"
+                class="bi bi-search center-icon"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                />
+              </svg>
+            </div>
+
+            <!-- Extra circles floating around -->
+            <div class="small-circle"><i class="bi bi-geo-alt"></i></div>
+            <div class="small-circle-2"><i class="bi bi-geo-alt"></i></div>
+            <div class="small-circle-3"><i class="bi bi-geo-alt"></i></div>
+            <div class="small-circle-4"><i class="bi bi-geo-alt"></i></div>
+          </div>
+        </div>
+
+        <!-- Button in the circle -->
+        <div class="button-circle">
+          <button class="btn btn-get-started absolute bottom-0 my-8">
+            <span class="blue-circle"></span
+            ><a class="link text-[10px]" href="login/Signin.html"
+              >Get Started</a
+            >
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+    <script src="gsap-version/cssanimation-gsap.js"></script>
+    <script type="text/javascript" src="assets/script.js"></script>
+  </body>
+</html>
