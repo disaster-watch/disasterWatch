@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="../src/CustomAlert.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- login start -->
+    <main class="bg-blue-900 h-screen flex items-center justify-center">
+      <article
+        class="bg-white w-[90vw] sm:w-[400px] p-6 rounded-[7px] shadow-lg"
+      >
+        <div class="flex">
+          <h1 class="text-center font-bold text-2xl mb-4">Login</h1>
+        </div>
+
+        <form action="#" class="">
+          <!-- for username -->
+          <div class="relative">
+            <label for="username" class="font-semibold"> Email</label>
+            <input
+              type="text"
+              id="username_two"
+              class="w-full outline-none border-b-2 px-8 border-gray-300 focus:border-blue-500 placeholder:text-[12px] mt-2"
+              placeholder="Type your username"
+            />
+            <figure>
+              <img
+                class="relative top-[-25px] left-[2px]"
+                src="../img/group_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg"
+                alt=""
+              />
+            </figure>
+
+            <p
+              id="error_email"
+              class="text-red-600 top-[-1rem] text-[10px] relative"
+            ></p>
+          </div>
+          <!-- Create password -->
+          <div class="relative mb-6">
+            <label for="password" class="font-semibold"> password</label>
+            <div class="flex flex-col">
+              <input
+                type="password"
+                id="password_two"
+                class="w-full outline-none border-b-2 px-8 border-gray-300 focus:border-blue-500 placeholder:text-[12px] mt-2"
+                placeholder="Type your password"
+                autocomplete="new-password"
+                aria-label="Password"
+                required
+              />
+              <figure>
+                <img
+                  src="../img/visibility_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg"
+                  alt="Toggle password visibility"
+                  class="absolute top-[30px] right-2 w-6 h-6 cursor-pointer"
+                  id="eye_two"
+                />
+              </figure>
+              <figure>
+                <img
+                  class="relative top-[-25px] left-1 w-6 h-6"
+                  src="../img/vpn_key_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg"
+                  alt="Password icon"
+                />
+              </figure>
+              <p
+                id="error_password"
+                class="text-red-600 top-[-1rem] text-[10px] relative"
+              ></p>
+            </div>
+          </div>
+          <!-- forget password -->
+          <p class="text-right mt-[-18px] font-[400] text-[15px]">
+            forget password
+          </p>
+          <div class="mt-8">
+            <!-- login button -->
+            <button
+              id="Login_submit"
+              type="submit"
+              class="w-full font-bold text-white bg-gradient-blue p-2 rounded-full"
+            >
+              Login
+            </button>
+          </div>
+          <!-- route -->
+          <p class="text-center">
+            <a href="./Signin.html" class="text-[12px] text-blue-600"
+              >or sign up</a
+            >
+          </p>
+        </form>
+      </article>
+    </main>
+    <script src="../script/Login.js" type="module"></script>
+  </body>
+</html>

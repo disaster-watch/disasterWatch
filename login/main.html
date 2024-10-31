@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <title>Disaster-Detector</title>
+    <link rel="shortcut icon" href="/imgs/DD.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="../src/animation.css">
+    <link rel="stylesheet" href="../src/responsive.css">
+    <link rel="stylesheet" href="../src/main.css">
+</head>
+
+<body>
+    <main>
+
+        <!-- Section -->
+        <section class="notification-section">
+            <!-- Alert -->
+            <div class="alert">
+                <!-- Hamburger-menu -->
+                <div class="menu">
+                    <span class="first"></span>
+                    <span class="second"></span>
+                    <span class="third"></span>
+                </div>
+                <div class="div2">
+                    <h3>Disaster Watch</h3>
+                    
+                </div>
+           
+                  <img src="../img/notifications.png" alt="notification bell" class="notification-bell" />
+                   <!-- </a> -->
+            </div>
+      
+            <!--Date Time-->
+            <div class="line-container">
+                <img src="../img/location.png" alt="Location" style="width:30px">
+                <p class="location">Fetching location...</p>
+                     <a href="../login/emergency.html">
+                <button class="emergency">Emergency Dial</button>
+                </a>
+              </div>
+            <!-- Notifications -->
+            <section class="notifications">
+                </div>
+                
+                
+                
+                
+                <!-- Weather forecast -->
+                
+                <h1 class="temperature" style="font-weight: 7000; color: white">Partly Cloudy</h1>  
+                <div class="card">
+        <center><div class="numc">
+            <img src="../img/wind.png" style="width:30px">
+            <p class="wind"></p>
+            
+        </div></center>
+        <div class="divider"></div>
+        <center><div class="numc">
+            <img src="../img/humid.png" style="width:30px">
+            <p class="humidity"></p>
+        </div></center>
+        <div class="divider"></div>
+        <center><div class="numc">
+            <img src="../img/rain-xxl.png" style="width:30px">
+            <p class="precipitation"></p>
+    </div></center>
+                <div class="modal-container">
+                    <div class="modal-backdrop"></div>
+                    <div class="modal">
+                    </div>
+                </div>
+
+
+            </section>
+            
+            
+                      
+            
+
+            <!-- Map view -->
+            <div class="mapDiv">
+                <a href="map.html"><button class="map" id="openmapdis"><img src="../img/Glyph.png" alt="map view" /> Map View</button></a>
+            </div>
+           
+
+        </section>
+
+    </main>
+    <!-- Footer -->
+    <footer>
+        <button class="btn animate-ping">
+            <span class="turn"></span>
+            <span class='round'></span>
+        </button>
+    </footer>
+    <script src="script.js"></script>
+    <script>const apiKey = '64f60853740a1ee3ba20d0fb595c97d5'; // Replace with your OpenWeatherMap API key
+
+function getWeather(latitude, longitude) {
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            document.querySelector('.location').textContent = `${data.name}`;
+            document.querySelector('.temperature').textContent = `Temperature: ${data.main.temp}°C`;
+            document.querySelector('.wind').textContent = `${data.wind.speed} m/s`;
+            document.querySelector('.humidity').textContent = `Humidity: ${data.main.humidity}%`;
+            document.querySelector('.precipitation').textContent = `Precipitation: ${data.weather[0].description}`;
+        })
+        .catch(error => {
+            console.error('Error fetching weather data:', error);
+            document.querySelector('.location-error').textContent = 'Error fetching weather data.';
+        });
+}
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+                getWeather(latitude, longitude);
+            },
+            (error) => {
+                let errorMessage = '';
+                switch (error.code) {
+                    case error.PERMISSION_DENIED:
+                        errorMessage = 'Permission denied. Please allow location access.';
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        errorMessage = 'Location information is unavailable.';
+                        break;
+                    case error.TIMEOUT:
+                        errorMessage = 'The request to get your location timed out.';
+                        break;
+                    default:
+                        errorMessage = 'An unknown error occurred while fetching your location.';
+                        break;
+                }
+                document.querySelector('.location-error').textContent = errorMessage;
+                console.error('Error getting location:', errorMessage);
+            }
+        );
+    } else {
+        console.error('Geolocation is not supported by this browser.');
+        document.querySelector('.location-error').textContent = 'Geolocation is not supported by this browser.';
+    }
+}
+
+// Call the function to get the user's location when the page loads
+getLocation();</script>
+</body>
+
+</html>

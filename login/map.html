@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Current Disasters Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100vh;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <script>
+      // Initialize the map
+      var map = L.map("map").setView([20, 0], 2); // Set the view to global
+
+      // Add a tile layer (OpenStreetMap)
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 18,
+        attribution: "© Num Codes",
+      }).addTo(map);
+
+      // Disaster data: an array of objects with name, lat, lng, and details
+      var disasters = [
+        {
+          name: "Floods in Italy",
+          lat: 44.5,
+          lng: 11.3,
+          details: "Severe flooding in Emilia Romagna.",
+        },
+        {
+          name: "Cyclone Dana",
+          lat: 20.9,
+          lng: 86.8,
+          details: "Cyclone impacting Odisha, India.",
+        },
+        {
+          name: "Wildfires in Bolivia",
+          lat: -16.5,
+          lng: -63.0,
+          details: "Thousands of hectares burned.",
+        },
+        {
+          name: "Kenya Floods",
+          lat: 0.2,
+          lng: 37.9,
+          details: "Heavy rains causing displacements.",
+        },
+        {
+          name: "Heatwave in Southeast Asia",
+          lat: 15.0,
+          lng: 100.0,
+          details: "Extreme heat affecting the region.",
+        },
+        {
+          name: "Landslides in Ethiopia",
+          lat: 9.1,
+          lng: 39.6,
+          details: "Triggered by heavy rain.",
+        },
+        {
+          name: "Canada Wildfires",
+          lat: 53.7,
+          lng: -113.3,
+          details: "Ongoing wildfires forcing evacuations.",
+        },
+        {
+          name: "Cholera Outbreak in Sudan",
+          lat: 15.6,
+          lng: 32.5,
+          details: "Cholera spread due to flooding.",
+        },
+        {
+          name: "Brazil Floods",
+          lat: -30.0,
+          lng: -51.2,
+          details: "Worst flooding in decades.",
+        },
+        {
+          name: "Japan Volcano Eruption",
+          lat: 31.6,
+          lng: 130.7,
+          details: "Eruptions prompting evacuations.",
+        },
+        {
+          name: "Hurricane Helene",
+          lat: 35.5,
+          lng: -75.5,
+          details: "Powerful hurricane off the US coast.",
+        },
+        {
+          name: "Nepal Flooding",
+          lat: 28.2,
+          lng: 84.3,
+          details: "Monsoon causing significant flooding.",
+        },
+        {
+          name: "Greece Wildfires",
+          lat: 37.8,
+          lng: 22.4,
+          details: "Wildfires near the Peloponnese.",
+        },
+        {
+          name: "Haiti Hunger Crisis",
+          lat: 18.5,
+          lng: -72.3,
+          details: "Severe food insecurity.",
+        },
+        {
+          name: "California Avian Flu",
+          lat: 36.8,
+          lng: -119.4,
+          details: "Outbreak of avian influenza.",
+        },
+        {
+          name: "Central Europe Flooding",
+          lat: 50.0,
+          lng: 15.0,
+          details: "Heavy rains across Europe.",
+        },
+        {
+          name: "Typhoon Yagi",
+          lat: 25.0,
+          lng: 121.0,
+          details: "Typhoon impacting Taiwan.",
+        },
+        {
+          name: "Libya Flooding",
+          lat: 32.0,
+          lng: 20.0,
+          details: "Flash floods causing damage.",
+        },
+        {
+          name: "Somalia Drought",
+          lat: 5.2,
+          lng: 45.0,
+          details: "Drought affecting water supply.",
+        },
+        {
+          name: "Indonesia Earthquake",
+          lat: -0.9,
+          lng: 119.9,
+          details: "Recent earthquake caused damage.",
+        },
+        {
+          name: "Alaska Storm",
+          lat: 60.0,
+          lng: -151.0,
+          details: "Storm causing coastal erosion.",
+        },
+        {
+          name: "Myanmar Conflict",
+          lat: 21.9,
+          lng: 96.1,
+          details: "Ongoing civil unrest.",
+        },
+        {
+          name: "Philippines Volcanic Activity",
+          lat: 13.3,
+          lng: 123.7,
+          details: "Increased volcanic activity.",
+        },
+        {
+          name: "South Sudan Hunger Crisis",
+          lat: 7.9,
+          lng: 30.5,
+          details: "Worsening food crisis.",
+        },
+        {
+          name: "Madagascar Cyclone",
+          lat: -18.9,
+          lng: 47.5,
+          details: "Cyclone causing widespread damage.",
+        },
+
+        { name: "Hurricane Helene", lat: 35.5, lng: -75.5 },
+        { name: "Brazil Wildfires", lat: -10.3, lng: -53.2 },
+        { name: "Nepal Flooding", lat: 28.2, lng: 84.3 },
+        { name: "West Africa Flooding", lat: 10.0, lng: 8.0 },
+        { name: "Greece Wildfires", lat: 37.8, lng: 22.4 },
+        { name: "Haiti Hunger Crisis", lat: 18.5, lng: -72.3 },
+        { name: "California Avian Influenza", lat: 36.8, lng: -119.4 },
+        { name: "Central Europe Flooding", lat: 50.0, lng: 15.0 },
+        { name: "Typhoon Yagi", lat: 25.0, lng: 121.0 },
+        { name: "Sudan Humanitarian Crisis", lat: 15.6, lng: 32.5 },
+        { name: "Libya Flooding", lat: 32.0, lng: 20.0 },
+        { name: "Somalia Drought", lat: 5.2, lng: 45.0 },
+        { name: "Indonesia Earthquake", lat: -0.9, lng: 119.9 },
+        { name: "Alaska Storm", lat: 60.0, lng: -151.0 },
+        { name: "Japan Volcano Eruption", lat: 31.6, lng: 130.7 },
+        { name: "Haiti Earthquake Aftermath", lat: 18.5, lng: -72.3 },
+        { name: "Israel-Gaza Conflict", lat: 31.5, lng: 34.5 },
+        { name: "Mali Conflict", lat: 17.5, lng: -4.0 },
+        { name: "Myanmar Clashes", lat: 21.9, lng: 95.9 },
+        { name: "Burkina Faso Violence", lat: 12.5, lng: -1.5 },
+        { name: "South Sudan Flooding", lat: 6.5, lng: 31.5 },
+        { name: "Central African Republic Instability", lat: 4.4, lng: 18.6 },
+        { name: "Mozambique Cyclone Recovery", lat: -18.0, lng: 35.0 },
+        { name: "Yemen Civil War", lat: 15.3, lng: 48.3 },
+        { name: "Ethiopia Drought", lat: 9.0, lng: 40.0 },
+        { name: "Afghanistan Food Crisis", lat: 33.0, lng: 65.0 },
+        { name: "Sudan Civil War", lat: 15.0, lng: 30.0 },
+        { name: "Syria Earthquake Recovery", lat: 35.5, lng: 38.0 },
+        { name: "Somalia Hunger Crisis", lat: 5.0, lng: 45.0 },
+        { name: "Peru and Bolivia Wildfires", lat: -15.0, lng: -62.0 },
+        { name: "New Zealand Weather Disasters", lat: -40.9, lng: 174.9 },
+        { name: "Pakistan Flood Recovery", lat: 30.0, lng: 70.0 },
+        { name: "Venezuela Humanitarian Crisis", lat: 6.0, lng: -66.0 },
+        { name: "Chile Heatwave", lat: -30.0, lng: -71.0 },
+        { name: "Nigeria Armed Conflicts", lat: 9.0, lng: 8.0 },
+        { name: "Philippines Typhoon", lat: 12.9, lng: 122.0 },
+        { name: "Honduras Flooding", lat: 15.0, lng: -86.0 },
+        { name: "Gambia Drought", lat: 13.5, lng: -15.3 },
+        { name: "India Flooding", lat: 20.0, lng: 78.0 },
+        { name: "Vietnam Flooding", lat: 14.2, lng: 108.0 },
+        { name: "South Africa Drought", lat: -30.0, lng: 25.0 },
+        { name: "Russia Wildfires", lat: 60.0, lng: 90.0 },
+        { name: "Canada Wildfires", lat: 56.0, lng: -106.0 },
+        { name: "Bangladesh Cyclone", lat: 23.7, lng: 90.4 },
+        { name: "Tanzania Flooding", lat: -6.4, lng: 34.8 },
+        { name: "Iraq Displacement Crisis", lat: 33.0, lng: 44.0 },
+        { name: "Congo Ebola Outbreak", lat: -1.5, lng: 15.6 },
+        { name: "Algeria Flooding", lat: 28.0, lng: 2.0 },
+        { name: "Malawi Cyclone", lat: -13.5, lng: 34.0 },
+        { name: "Fiji Cyclone", lat: -17.8, lng: 178.4 },
+        { name: "Egypt Flooding", lat: 26.0, lng: 30.0 },
+        { name: "Sierra Leone Mudslides", lat: 8.5, lng: -11.5 },
+        { name: "Lebanon Humanitarian Crisis", lat: 33.8, lng: 35.5 },
+        { name: "Zambia Drought", lat: -15.0, lng: 28.0 },
+        { name: "Guatemala Volcanic Activity", lat: 14.6, lng: -90.5 },
+        { name: "Paraguay Flooding", lat: -23.0, lng: -58.0 },
+        { name: "Jordan Refugee Crisis", lat: 30.0, lng: 36.5 },
+        { name: "Ecuador Earthquake", lat: -1.5, lng: -78.5 },
+        { name: "Mali Food Insecurity", lat: 17.0, lng: -3.0 },
+        { name: "Myanmar Humanitarian Crisis", lat: 21.0, lng: 95.0 },
+      ];
+
+      // Add markers to the map for each disaster
+      disasters.forEach(function (disaster) {
+        L.marker([disaster.lat, disaster.lng])
+          .addTo(map)
+          .bindPopup("<b>" + disaster.name + "</b><br>" + disaster.details);
+      });
+    </script>
+  </body>
+</html>
