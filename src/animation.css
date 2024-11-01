@@ -8,13 +8,18 @@
 .hide {
   display: none;
 }
-
+.milk {
+  width: 90px;
+}
 .left {
   transform: rotate(-45deg) translate(0px, -21px);
   margin-top: 11px;
   margin-left: 15px;
 }
 
+.notification-bell {
+  width: 20px;
+}
 /* Notification Animation */
 .notification-item:hover {
   animation: shot 1s ease-in-out;
