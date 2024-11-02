@@ -69,3 +69,7 @@ const fetchEmergencyLine = (name) => {
 getUserLocation();
 fetchEmergencyLine("ng");
 // console.log(emergencyLine);
+
+document.getElementById('back').addEventListener('click', function() {
+  window.location.href = 'main.html';
+});
