@@ -19,7 +19,8 @@
     </style>
   </head>
   <body>
-    <div id="map"></div>
+   
+    <div id="map"> <p><img src="https://img.icons8.com/?size=100&id=SXlMUhkT4uWA&format=png&color=000000" alt="" style="float: right; width: 40px; height: 40px;" id="back"></p></div>
 
     <script>
       // Initialize the map
@@ -252,6 +253,10 @@
           .addTo(map)
           .bindPopup("<b>" + disaster.name + "</b><br>" + disaster.details);
       });
+
+      document.getElementById('back').addEventListener('click', function() {
+  window.location.href = 'main.html';
+});
 
       
     </script>
