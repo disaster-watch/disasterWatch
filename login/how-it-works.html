@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disaster watch</title>
+    <link rel="icon" type="image/svg" href="../img/Logomark.svg" />
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="../src/output.css" />
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <header class="hero-section">
+      <nav
+        class="flex fixed top-0 pt-4 left-0 right-0 justify-between items-center bg-white md:bg-transparent z-50"
+      >
+        <div class="flex justify-between mx-4 items-center">
+          <div class="logo">
+            <figure>
+              <img src="../img/Logomark.svg" alt="logo" class="w-10 h-10" />
+            </figure>
+            <span class="text-blue-900">Disaster Watch </span>
+          </div>
+        </div>
+
+        <div
+          id="list"
+          class="md:relative md:block hidden absolute top-0 right-0 left-0 bg-white md:bg-transparent"
+        >
+          <ul
+            class="md:flex items-center gap-4 space-y-4 md:space-y-0 text-black p-4 md:text-white"
+          >
+            <li class="md:hidden flex justify-between items-center">
+              <div>
+                <figure>
+                  <img src="../img/Logomark.svg" alt="logo" class="w-10 h-10" />
+                </figure>
+              </div>
+              <div>
+                <img
+                  id="close"
+                  src="../img/close_24dp_5F6368_FILL0_wght400_GRAD0_opsz24 (1).svg"
+                  alt="close icon"
+                />
+              </div>
+            </li>
+            <li><a href="../landing.html">Features</a></li>
+            <li><a href="#how-it-works">How it Works</a></li>
+            <li><a href="#contact" class="contact">Contact</a></li>
+            <li>
+              <a href="../welcome-page.html">
+                <button
+                  class="p-2 text-white rounded-lg text-[15px] bg-[#2056DF]"
+                >
+                  Get Started
+                </button>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <figure id="toggle" class="md:hidden mr-4">
+          <img src="../img/white.svg" alt="menu" />
+        </figure>
+      </nav>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>How It Works</h1>
+          <p>
+            In a world where natural disasters can strike unexpectedly, staying informed and prepared is crucial. The Disaster Detector Web App is designed to bridge the gap between data and safety by providing real-time updates and critical information to help users make informed decisions during emergencies. This article takes a closer look at how the Disaster Detector web app operates, from data collection to user notifications, ensuring a comprehensive understanding of its inner workings.
+          </p>
+          <div class="hero-buttons">
+            <button class="secondary-btn text-[10px]">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="hero-content">
+        <div class="hero-text">
+          <h1>About Disaster Watch</h1>
+          <p>
+            <li>
+               <b>Data Collection and Integration:</b> 
+                At the heart of the Disaster Detector is its ability to gather accurate and timely information from multiple reliable sources. The app integrates several APIs to pull data on weather conditions, disaster alerts, and other relevant information. 
+            </li>
+
+            <li>
+                <h2><b>User Interface and User Experience</b> </h2>
+                The front-end of the Disaster Detector app is built with HTML, CSS, and JavaScript, creating an intuitive and sleek interface. Here’s how users interact with the app:
+                <br>
+               <li>
+                <b>Dashboard</b> 
+                The dashboard is the main interface where users can view real-time weather information and ongoing disaster alerts.
+                Users can see important metrics such as temperature, humidity, wind speed, and precipitation levels. For ongoing disasters, alerts are prominently displayed.
+               </li>
+               <li>
+                <b>Map View</b> 
+                The app features a map view that visually highlights disaster-affected areas. This helps users quickly understand which regions are currently impacted and provides more context than text-based alerts.
+               </li>
+               <li>
+                <b>Interactive Alerts</b> 
+                Users receive visual and audio alerts for any significant events. These alerts can be customized in the app settings to suit user preferences.
+               </li>
+                
+                
+            </li>
+           
+          </p>
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-text">
+            <h1>Stack</h1>
+            <section class="stacks-section">
+                <h2>Our Tech Stack</h2>
+                <div class="stack-container">
+                  <div class="stack-item">
+                    <img src="https://img.icons8.com/?size=100&id=D2Hi2VkJSi33&format=png&color=000000" alt="HTML">
+                    <p>HTML</p>
+                  </div>
+                  <div class="stack-item">
+                    <img src="https://img.icons8.com/?size=100&id=YjeKwnSQIBUq&format=png&color=000000" alt="CSS">
+                    <p>CSS</p>
+                  </div>
+                  <div class="stack-item">
+                    <img src="https://img.icons8.com/?size=100&id=Nkym0Ujb8VGI&format=png&color=000000" alt="JS">
+                    <p>JavaScript</p>
+                  </div>
+                </div>
+            </section>
+        </div>
+      </div>
+      
+      <div class="faq-section">
+        <h1 style="font-weight: bold; font-size: large;">FAQ(Frequently Asked Questions)</h1>
+        <div class="faq-card">
+            <div class="faq-item">
+              <div class="faq-question" onclick="toggleFAQ(this)">
+                What is Disaster Watch?
+                <span class="arrow">▼</span>
+              </div>
+              <div class="faq-answer">
+                Disaster Watch is an app that provides real-time updates on various natural disasters to keep users informed and prepared.
+              </div>
+            </div>
+    
+            <div class="faq-item">
+              <div class="faq-question" onclick="toggleFAQ(this)">
+                How does it work?
+                <span class="arrow">▼</span>
+              </div>
+              <div class="faq-answer">
+                The app integrates data from multiple APIs to collect and display information on weather, geolocation, and natural disasters.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                Can I use the app on my mobile device?
+              <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                Yes, the app is fully responsive and can be <br>
+                used on desktops, tablets, and smartphones.
+            </div>
+          </div>
+        </div>   
+      </div>
+
+
+      <section class="contact-section" id="contact-section">
+        <div class="contact-container">
+          <h2 style="color: white;">Contact Us</h2>
+          <p  style="color: white;">We would love to hear from you! Reach out to us with any questions or feedback.</p>
+          <form class="contact-form">
+            <div class="form-group">
+              <input type="text" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Your Message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+      </section>
+      
+      
+
+       <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <figure>
+              <img src="../img/Logomark.svg" alt="logo" class="w-10 h-10" />
+            </figure>
+            <span>Disaster Watch</span>
+          </div>
+          <div class="footer-links">
+            <h3>Product</h3>
+            <ul>
+              <li><a href="../landing.html">Features</a></li>
+              <li><a href="#">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h3>Connect</h3>
+            <ul>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">Facebook</a></li>
+            </ul>
+          </div>
+        </div>
+        <p>&copy; 2024 DisasterGuard. All rights reserved.</p>
+      </footer>
+      <script src="../script/nav.js"></script>
+    </body>
+  </html>
+  
