@@ -2,6 +2,8 @@
 module.exports = {
   content: [
     "./login/Signin.html",
+    "./login/main.html",
+    "./landing.html",
     "./login/emergency.html",
     "./login/login.html",
     "./welcome-page.html",

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disaster watch</title>
+    <link rel="icon" type="image/svg" href="./img/Logomark.svg" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <header class="hero-section">
+      <nav
+        class="flex fixed top-0 pt-4 left-0 right-0 justify-between items-center bg-white md:bg-transparent z-50"
+      >
+        <div class="flex justify-between mx-4 items-center">
+          <div class="logo">
+            <figure>
+              <img src="./img/Logomark.svg" alt="logo" class="w-10 h-10" />
+            </figure>
+            <span class="text-blue-900">Disaster Watch </span>
+          </div>
+        </div>
+
+        <div
+          id="list"
+          class="md:relative md:block hidden absolute top-0 right-0 left-0 bg-white md:bg-transparent"
+        >
+          <ul
+            class="md:flex items-center gap-4 space-y-4 md:space-y-0 text-black p-4 md:text-white"
+          >
+            <li class="md:hidden flex justify-between items-center">
+              <div>
+                <figure>
+                  <img src="./img/Logomark.svg" alt="logo" class="w-10 h-10" />
+                </figure>
+              </div>
+              <div>
+                <img
+                  id="close"
+                  src="./img/close_24dp_5F6368_FILL0_wght400_GRAD0_opsz24 (1).svg"
+                  alt="close icon"
+                />
+              </div>
+            </li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How it Works</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+              <a href="./welcome-page.html">
+                <button
+                  class="p-2 text-white rounded-lg text-[15px] bg-[#2056DF]"
+                >
+                  Get Started
+                </button>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <figure id="toggle" class="md:hidden mr-4">
+          <img src="./img/white.svg" alt="menu" />
+        </figure>
+      </nav>
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Early Warning System for Natural Disasters</h1>
+          <p>
+            Stay ahead of nature's uncertainties with real-time alerts and
+            predictive analytics for natural disasters.
+          </p>
+          <div class="hero-buttons">
+            <a href="./welcome-page.html">
+              <button class="primary-btn text-[10px]">Get Protected →</button>
+            </a>
+            <button class="secondary-btn text-[10px]">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+      <h2>Advanced Detection Features</h2>
+      <div class="features-cards">
+        <div class="feature-card">
+          <span class="icon">🔔</span>
+          <h3>Real-time Alerts</h3>
+          <p>
+            Instant notifications for immediate awareness and response to
+            emerging threats.
+          </p>
+        </div>
+        <div class="feature-card">
+          <span class="icon">📍</span>
+          <h3>Precise Location Tracking</h3>
+          <p>Accurate geographical monitoring with advanced GPS integration.</p>
+        </div>
+        <div class="feature-card">
+          <span class="icon">📊</span>
+          <h3>Predictive Analytics</h3>
+          <p>
+            AI-powered predictions to anticipate potential natural disasters.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="stat-card">
+        <div class="stat-number">99.9%</div>
+        <div class="stat-text">Accuracy Rate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">15M+</div>
+        <div class="stat-text">Protected Users</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">150+</div>
+        <div class="stat-text">Countries Covered</div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <h2>Ready to Stay Protected?</h2>
+      <p>
+        Join millions of users worldwide who trust DisasterGuard for their
+        safety and peace of mind.
+      </p>
+      <a href="./login/Signin.html">
+        <button class="primary-btn">Start Free Trial</button>
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <figure>
+            <img src="./img/Logomark.svg" alt="logo" class="w-10 h-10" />
+          </figure>
+          <span>Disaster Watch</span>
+        </div>
+        <div class="footer-links">
+          <h3>Product</h3>
+          <ul>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">API</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Connect</h3>
+          <ul>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <p>&copy; 2024 DisasterGuard. All rights reserved.</p>
+    </footer>
+    <script src="./script/nav.js"></script>
+  </body>
+</html>
